@@ -20,9 +20,12 @@ public class Player : MonoBehaviour
     public int direction=1;
 
     [Header("プレイヤーが死んだら")]
-    [SerializeField] private bool isAlive = true;
     [SerializeField] private string thisScene;
     private bool canMove = true;
+
+    [Header("ジャンプ制限")]
+    private int jumpCount = 0;
+    private int maxJumpCount = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +49,7 @@ public class Player : MonoBehaviour
         }
 
         // 移動
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             position.x -= movingSpeed * Time.deltaTime;
             direction = -1;
@@ -54,7 +57,7 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector2(-1, 1);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             position.x += movingSpeed * Time.deltaTime;
             direction = 1;
@@ -63,26 +66,34 @@ public class Player : MonoBehaviour
         }
 
         // ジャンプをする（もしスペースキーが押されて、上方向に速度がない時に）
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount < maxJumpCount)
         {
             rb.AddForce(Vector2.up * jumpP);
+            jumpCount++;
         }
 
         transform.position = position;
 
 
         // ひのこ飛ばし
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            // ひのこ生成
             Instantiate(fire, firePosition.transform.position, Quaternion.identity); //弾を生成
             
         }
-
-        
     }
 
     public void SetCanMove(bool value)
     {
         canMove = value;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground")|| collision.gameObject.CompareTag("Light"))
+        {
+            jumpCount = 0;
+        }
     }
 }

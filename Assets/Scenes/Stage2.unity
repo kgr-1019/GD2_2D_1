@@ -267,6 +267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5107965390446348424, guid: b9bb2b889aea81747be3a6e231498540, type: 3}
+      propertyPath: candleLight
+      value: 
+      objectReference: {fileID: 7703811363521596439, guid: 4257cc27a3060a144a18f4b1a6f69e12, type: 3}
     - target: {fileID: 5951388952926887232, guid: b9bb2b889aea81747be3a6e231498540, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.33
@@ -417,6 +421,7 @@ GameObject:
   - component: {fileID: 626219443}
   - component: {fileID: 626219442}
   - component: {fileID: 626219441}
+  - component: {fileID: 626219444}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -498,6 +503,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &626219444
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626219440}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a4b8dc82bd0a0c24dbb26d92edf06d32, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.239
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &797337350
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +850,7 @@ GameObject:
   - component: {fileID: 1142924982}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1947,6 +2048,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5107965390446348424, guid: b9bb2b889aea81747be3a6e231498540, type: 3}
+      propertyPath: candleLight
+      value: 
+      objectReference: {fileID: 7703811363521596439, guid: 4257cc27a3060a144a18f4b1a6f69e12, type: 3}
     - target: {fileID: 5951388952926887232, guid: b9bb2b889aea81747be3a6e231498540, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.12
@@ -2055,6 +2160,10 @@ PrefabInstance:
     - target: {fileID: 7055661128548491528, guid: 3aded44c7a3922c4a818b0b63c037d3a, type: 3}
       propertyPath: startPos
       value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7055661128548491528, guid: 3aded44c7a3922c4a818b0b63c037d3a, type: 3}
+      propertyPath: thisScene
+      value: Stage2
       objectReference: {fileID: 0}
     - target: {fileID: 7055661128548491528, guid: 3aded44c7a3922c4a818b0b63c037d3a, type: 3}
       propertyPath: firePosition

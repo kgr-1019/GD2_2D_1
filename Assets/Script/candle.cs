@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class candle : MonoBehaviour
+public class Candle : MonoBehaviour
 {
-    [SerializeField] private GameObject light;
+    [SerializeField] private GameObject candleLight;
     [SerializeField] private bool canLight = false;
     [SerializeField] private bool hasLight = false;
 
@@ -20,7 +20,7 @@ public class candle : MonoBehaviour
         if (canLight&&!hasLight)
         {
             // ÉâÉCÉgÇê∂ê¨
-            Instantiate(light, transform.position, Quaternion.identity);
+            Instantiate(candleLight, transform.position, Quaternion.identity);
             hasLight = true;
         }
     }

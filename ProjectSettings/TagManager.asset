@@ -10,6 +10,8 @@ TagManager:
   - Goal
   - Candle
   - Toge
+  - Ground
+  - Lamp
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
